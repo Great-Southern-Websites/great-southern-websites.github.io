@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>No site at this address</title>
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* The five colours of the Great Southern palette: ink, star, sightline, paper,
+   muted. Light is the default; dark is the same five with ink and paper swapped. */
+:root {
+  color-scheme: light;
+  --ink: #0E1726;
+  --ink-raised: #16233A;
+  --star: #E8B04B;
+  --sightline: #8FB8D9;
+  --sightline-deep: #2F6C9A;
+  --paper: #F4F6F8;
+  --paper-dim: #C7D2DC;
+  --muted: #5F7182;
+
+  --bg: var(--paper);
+  --bg-card: #FFFFFF;
+  --fg: var(--ink);
+  --fg-muted: var(--muted);
+  --line: #D6DEE6;
+  --accent: var(--sightline-deep);
+  --shadow: 0 10px 30px rgba(14, 23, 38, 0.08);
+}
+@media (prefers-color-scheme: dark) {
+:root:not([data-theme="light"]) {
+  color-scheme: dark;
+  --bg: #0A0F18;
+  --bg-card: var(--ink-raised);
+  --fg: var(--paper);
+  --fg-muted: var(--paper-dim);
+  --line: #2A3A50;
+  --accent: var(--sightline);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0A0F18;
+  --bg-card: var(--ink-raised);
+  --fg: var(--paper);
+  --fg-muted: var(--paper-dim);
+  --line: #2A3A50;
+  --accent: var(--sightline);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--fg);
+  background: var(--bg);
+}
+main {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 3rem 1.1rem;
+}
+.card {
+  width: 100%;
+  max-width: 34rem;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 2rem 1.75rem 2.25rem;
+  text-align: center;
+}
+.mark { width: 64px; height: 64px; margin: 0 auto 1.25rem; color: var(--fg-muted); display: block; }
+h1 {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: clamp(1.6rem, 4.5vw, 2.1rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.75rem;
+}
+p { margin: 0 0 1rem; }
+.address {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.95rem;
+  color: var(--fg-muted);
+  overflow-wrap: anywhere;
+}
+.muted { color: var(--fg-muted); font-size: 0.95rem; }
+.btn {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg-card);
+  text-decoration: none;
+  font-weight: 600;
+}
+.btn:hover { filter: brightness(1.08); }
+:focus-visible { outline: 3px solid var(--star); outline-offset: 2px; }
+footer { border-top: 1px solid var(--line); }
+.footer-inner {
+  max-width: 68rem;
+  margin-inline: auto;
+  padding: 1rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+footer a { color: var(--fg-muted); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+footer a:hover { color: var(--fg); }
+</style>
+</head>
+<body>
+<main>
+  <div class="card">
+    <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.55"><line x1="52" y1="14" x2="46" y2="90"/><line x1="15" y1="50" x2="86" y2="37"/><line x1="49" y1="55" x2="60" y2="66"/></g>
+      <g fill="var(--accent)"><circle cx="52" cy="14" r="7"/><circle cx="46" cy="90" r="8.5"/><circle cx="15" cy="50" r="6.5"/><circle cx="86" cy="37" r="6"/><circle cx="60" cy="66" r="4"/></g>
+    </svg>
+    <h1>There is no site at this address</h1>
+    <p class="address" id="address"></p>
+    <p>The site may have been removed, or the address may be spelled a little differently. If someone gave you this link, ask them to check it.</p>
+    <p class="muted">Sites built by Great Southern Websites live here until they move to their own domain.</p>
+    <a class="btn" href="https://www.greatsouthern.website/">Great Southern Websites</a>
+  </div>
+</main>
+<footer>
+  <div class="footer-inner">
+    <a href="https://greatsouthernsoftware.com.au" rel="noopener">&copy; 2026 Great Southern Software Pty&nbsp;Ltd</a>
+  </div>
+</footer>
+<script>
+  // textContent only: the address is whatever the visitor typed.
+  document.getElementById('address').textContent = location.host + location.pathname;
+</script>
+</body>
+</html>
